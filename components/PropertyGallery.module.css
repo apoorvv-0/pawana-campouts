@@ -1,0 +1,43 @@
+.galleryWrapper {
+  width: 100%;
+  margin-bottom: var(--space-lg);
+}
+
+.scrollStrip {
+  display: flex;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 var(--container-padding);
+}
+
+.scrollStrip::-webkit-scrollbar {
+  display: none;
+}
+
+.heroImage {
+  position: relative;
+  flex: 0 0 85vw;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.thumbnail {
+  position: relative;
+  flex: 0 0 40vw;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .heroImage {
+    flex: 0 0 700px;
+  }
+  
+  .thumbnail {
+    flex: 0 0 250px;
+  }
+}

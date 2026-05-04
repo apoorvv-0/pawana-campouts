@@ -1,0 +1,119 @@
+.page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.header {
+  padding: var(--space-4xl) 0 var(--space-2xl);
+  text-align: center;
+}
+
+.bookingGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3xl);
+  padding-bottom: var(--space-4xl);
+}
+
+@media (min-width: 992px) {
+  .bookingGrid {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.stepTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.stepNumber {
+  width: 32px;
+  height: 32px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+@media (max-width: 576px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-secondary);
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.summaryCard {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-lg));
+  background: var(--color-bg-dark);
+  color: #fff;
+  padding: var(--space-2xl);
+  border-radius: var(--radius-lg);
+}
+
+.summaryTitle {
+  color: #fff;
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: var(--space-sm);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-3xl) 0;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,71 @@
+.pricingBlock {
+  padding: var(--space-xl) var(--container-padding);
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  margin: var(--space-lg) var(--container-padding);
+  border: 1px solid var(--color-border-light);
+}
+
+.heading {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.priceDetail {
+  margin-bottom: var(--space-lg);
+}
+
+.mainPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.amount {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+}
+
+.unit {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.extraGuest {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px dashed var(--color-border);
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.note svg {
+  color: var(--color-primary-light);
+}
+
+.discountBadge {
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+}

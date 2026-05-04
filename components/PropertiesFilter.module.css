@@ -1,0 +1,82 @@
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border-light);
+  padding: var(--space-md) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 var(--container-padding);
+}
+
+.filterBar::-webkit-scrollbar {
+  display: none;
+}
+
+.filterGroup {
+  display: flex;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.filterChip {
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.filterChip:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filterChipActive {
+  background: var(--color-primary-50);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.moreFilters {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+}
+
+.filterBtn:hover {
+  background: var(--color-bg);
+}
+
+@media (max-width: 768px) {
+  .stickyContainer {
+    top: var(--nav-height);
+  }
+}
