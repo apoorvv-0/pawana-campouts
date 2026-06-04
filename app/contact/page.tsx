@@ -33,7 +33,7 @@ export default function ContactPage() {
               <div className={styles.infoIcon}><Phone size={24} /></div>
               <div>
                 <h3 className={styles.infoTitle}>Call or WhatsApp</h3>
-                <p className={styles.infoValue}>+91 99999 99999</p>
+                <p className={styles.infoValue}>+91 83296 49001</p>
                 <p className={styles.infoValue}>Mon-Sun, 9am - 9pm</p>
               </div>
             </div>

@@ -35,10 +35,21 @@
 }
 
 .desc {
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.75);
-  font-size: 1.05rem;
-  max-width: 460px;
-  line-height: 1.6;
+  max-width: 500px;
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.proofLine {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-lg);
 }
 
 .cta {

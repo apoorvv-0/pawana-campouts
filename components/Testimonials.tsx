@@ -34,6 +34,9 @@ function TestimonialCard({ t }: { t: Testimonial }) {
         <div className={styles.avatar}>{initials}</div>
         <div>
           <div className={styles.authorName}>{t.reviewer_name}</div>
+          {t.verified_guest && (
+            <div className={styles.verifiedBadge}>✓ Verified Guest</div>
+          )}
         </div>
       </div>
     </article>
@@ -63,10 +66,15 @@ export default async function Testimonials() {
     .from("testimonials")
     .select("*")
     .order("created_at", { ascending: false })
-    .limit(3);
+    .limit(6);
 
   const testimonials: Testimonial[] = data ?? [];
   const hasData = testimonials.length > 0;
+
+  // Calculate aggregate rating
+  const avgRating = hasData
+    ? (testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length).toFixed(1)
+    : null;
 
   return (
     <section className={`section ${styles.testimonials}`} id="testimonials">
@@ -74,9 +82,13 @@ export default async function Testimonials() {
         <div className={styles.header}>
           <span className="section-label">Reviews</span>
           <h2 className="section-title">What Our Guests Say</h2>
-          <p className="section-subtitle">
-            Real experiences from real adventurers.
-          </p>
+          {avgRating && (
+            <div className={styles.aggregate}>
+              <Star size={20} fill="var(--color-accent)" stroke="var(--color-accent)" />
+              <span className={styles.aggRating}>{avgRating}</span>
+              <span className={styles.aggCount}>out of 5 based on {testimonials.length} reviews</span>
+            </div>
+          )}
         </div>
 
         <div className={styles.grid}>

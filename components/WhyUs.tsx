@@ -1,21 +1,26 @@
-import { Package, BadgeDollarSign, Sparkles } from "lucide-react";
+import { Package, BadgeDollarSign, Sparkles, ShieldCheck } from "lucide-react";
 import styles from "./WhyUs.module.css";
 
 const ITEMS = [
   {
     icon: <Package size={28} strokeWidth={1.8} />,
-    title: "Complete Bundles",
-    desc: "Stay + activities in one booking — no juggling multiple vendors.",
+    title: "Stay + Activities, One Price",
+    desc: "Book your entire Pawana weekend in one go — stay, kayaking, bonfire, trek — no juggling vendors.",
   },
   {
     icon: <BadgeDollarSign size={28} strokeWidth={1.8} />,
-    title: "Better Prices",
-    desc: "Cheaper than booking stays and activities separately.",
+    title: "Up to 30% Cheaper",
+    desc: "Our bundles cost up to 30% less than booking stays and activities separately. We cut the middlemen.",
   },
   {
     icon: <Sparkles size={28} strokeWidth={1.8} />,
-    title: "Curated Properties",
-    desc: "Every property handpicked and verified near Pawana Lake.",
+    title: "Handpicked & Verified by Locals",
+    desc: "Every property is personally inspected by our team. We live here — we know the best spots.",
+  },
+  {
+    icon: <ShieldCheck size={28} strokeWidth={1.8} />,
+    title: "Free Cancellation",
+    desc: "Changed your mind? Full refund up to 7 days before check-in. No questions asked.",
   },
 ];
 

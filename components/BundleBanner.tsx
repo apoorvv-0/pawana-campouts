@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Flame } from "lucide-react";
 import styles from "./BundleBanner.module.css";
 
 export default function BundleBanner() {
@@ -13,9 +13,13 @@ export default function BundleBanner() {
             One price. <span className={styles.accent}>Zero hassle.</span>
           </h2>
           <p className={styles.desc}>
-            Bundle your stay with activities and save up to 30%. Everything
-            planned, everything included.
+            Bundle your stay with kayaking, bonfires, and treks — and save up to ₹750 on your weekend.
+            Everything planned, everything included.
           </p>
+          <div className={styles.proofLine}>
+            <Flame size={16} />
+            <span>234 groups booked a bundle this month</span>
+          </div>
           <Link href="/properties?type=bundle" className={`btn ${styles.cta}`}>
             See Bundles
             <ArrowRight size={18} />

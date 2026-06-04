@@ -92,6 +92,7 @@ const PropertyDetailView: React.FC<PropertyDetailViewProps> = ({
         <div className={styles.rightColumn}>
           <BookingStickyBar 
             propertySlug={property.slug}
+            propertyName={property.name}
             basePrice={getBasePrice()}
             selectedActivityIds={selectedActivityIds}
           />

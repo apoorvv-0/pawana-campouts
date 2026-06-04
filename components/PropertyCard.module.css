@@ -46,6 +46,23 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
+.popularBadge {
+  position: absolute;
+  top: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: linear-gradient(135deg, #E65100, #FF6D00);
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(230, 81, 0, 0.3);
+}
+
 .wishlistBtn {
   position: absolute;
   top: var(--space-md);
@@ -85,7 +102,29 @@
   gap: 4px;
   font-size: 0.8rem;
   color: var(--color-text-secondary);
+}
+
+.locationRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 4px;
+}
+
+.ratingBadge {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.reviewCount {
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
 }
 
 .title {

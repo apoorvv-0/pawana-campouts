@@ -23,7 +23,7 @@ export default function Footer() {
           <p className={styles.tagline}>Your complete Pawana escape.</p>
           <div className={styles.socials}>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/918329649001"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -69,7 +69,7 @@ export default function Footer() {
               📍 Near Pawana Lake, Lonavala, Maharashtra
             </li>
             <li className={styles.contactItem}>
-              📞 +91 99999 99999
+              📞 +91 83296 49001
             </li>
             <li className={styles.contactItem}>
               ✉️ hello@pawanacampouts.com
@@ -82,7 +82,7 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className="container">
           <p className={styles.copyright}>
-            © 2025 Pawana Campouts. All rights reserved.
+            © {new Date().getFullYear()} Pawana Campouts. All rights reserved.
           </p>
         </div>
       </div>

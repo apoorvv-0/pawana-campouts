@@ -3,16 +3,18 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, Heart, Users, Coffee, Wind, Mountain, ChevronRight } from 'lucide-react';
+import { MapPin, Heart, Users, Star, ChevronRight } from 'lucide-react';
 import styles from './PropertyCard.module.css';
 import { Property } from '@/lib/supabase';
 
 interface PropertyCardProps {
   property: Property;
+  avgRating?: number;
+  reviewCount?: number;
 }
 
-const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
-  const { name, type, location, image_url, pricing, amenities, slug } = property;
+const PropertyCard: React.FC<PropertyCardProps> = ({ property, avgRating, reviewCount }) => {
+  const { name, type, location, image_url, pricing, amenities, slug, is_featured } = property;
 
   // Type-specific colors and labels
   const typeConfig = {
@@ -64,14 +66,6 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
     }
   };
 
-  // Map amenities to icons (max 4)
-  const amenityIcons: Record<string, React.ReactNode> = {
-    'WiFi': <Wind size={14} />,
-    'Breakfast': <Coffee size={14} />,
-    'Lake View': <Mountain size={14} />,
-    'Parking': <MapPin size={14} />,
-  };
-
   return (
     <Link href={`/properties/${slug}`} className={styles.card}>
       <div className={styles.imageContainer}>
@@ -81,6 +75,9 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
         >
           {config.label}
         </div>
+        {is_featured && (
+          <div className={styles.popularBadge}>Popular</div>
+        )}
         <button 
           className={styles.wishlistBtn}
           onClick={(e) => {
@@ -101,9 +98,20 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
 
       <div className={styles.content}>
         <div className={styles.header}>
-          <div className={styles.location}>
-            <MapPin size={12} />
-            <span>{location}</span>
+          <div className={styles.locationRow}>
+            <div className={styles.location}>
+              <MapPin size={12} />
+              <span>{location}</span>
+            </div>
+            {avgRating && avgRating > 0 && (
+              <div className={styles.ratingBadge}>
+                <Star size={12} fill="var(--color-accent)" stroke="var(--color-accent)" />
+                <span>{avgRating.toFixed(1)}</span>
+                {reviewCount && reviewCount > 0 && (
+                  <span className={styles.reviewCount}>({reviewCount})</span>
+                )}
+              </div>
+            )}
           </div>
           <h3 className={styles.title}>{name}</h3>
         </div>
@@ -113,9 +121,8 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
             <Users size={14} />
             <span>{property.max_guests ? `Up to ${property.max_guests} guests` : 'Flexible occupancy'}</span>
           </div>
-          {amenities.slice(0, 3).map((amenity) => (
+          {amenities.slice(0, 2).map((amenity) => (
             <div key={amenity} className={styles.amenity}>
-              {amenityIcons[amenity] || <Wind size={14} />}
               <span>{amenity}</span>
             </div>
           ))}
